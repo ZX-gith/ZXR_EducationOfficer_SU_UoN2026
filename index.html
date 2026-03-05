@@ -31,13 +31,8 @@
   }
 
   /* ── SPA PAGE ROUTING ── */
-  .page { 
-    display: none; 
-  }
-  .page.active { 
-    display: block; 
-    animation: fadeIn 0.4s ease-in-out; 
-  }
+  .page { display: none; }
+  .page.active { display: block; animation: fadeIn 0.4s ease-in-out; }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
@@ -46,128 +41,66 @@
 
   /* ── HERO ── */
   .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 2rem;
-    text-align: center;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; position: relative; overflow: hidden; padding: 2rem; text-align: center;
   }
-
   .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 60% at 50% 60%, rgba(204,17,17,0.08) 0%, transparent 70%);
-    pointer-events: none;
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 60%, rgba(204,17,17,0.08) 0%, transparent 70%); pointer-events: none;
   }
 
   /* Moon */
   .moon {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
+    width: 280px; height: 280px; border-radius: 50%;
     background: radial-gradient(circle at 38% 38%, var(--moon) 0%, #E8C870 40%, #B8922A 80%, #7A5A10 100%);
-    box-shadow:
-      0 0 60px rgba(247,232,192,0.15),
-      0 0 120px rgba(247,232,192,0.06),
-      inset -30px -20px 60px rgba(0,0,0,0.5);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.12;
-    animation: moonPulse 8s ease-in-out infinite;
+    box-shadow: 0 0 60px rgba(247,232,192,0.15), 0 0 120px rgba(247,232,192,0.06), inset -30px -20px 60px rgba(0,0,0,0.5);
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    opacity: 0.12; animation: moonPulse 8s ease-in-out infinite;
   }
-
   @keyframes moonPulse {
     0%, 100% { opacity: 0.12; transform: translate(-50%, -50%) scale(1); }
     50% { opacity: 0.18; transform: translate(-50%, -50%) scale(1.03); }
   }
 
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 1.2s ease both;
-  }
-
+  .hero-content { position: relative; z-index: 2; animation: fadeUp 1.2s ease both; }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
-    color: var(--grey);
-    letter-spacing: 0.15em;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 1.2s 0.2s ease both;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+    font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--grey); letter-spacing: 0.15em;
+    margin-bottom: 1.5rem; animation: fadeUp 1.2s 0.2s ease both;
   }
 
   .hero-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3.5rem, 12vw, 8rem);
-    letter-spacing: 0.05em;
-    line-height: 0.9;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-    animation: fadeUp 1.2s 0.3s ease both;
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 12vw, 8rem);
+    letter-spacing: 0.05em; line-height: 0.9; color: var(--white);
+    margin-bottom: 0.5rem; animation: fadeUp 1.2s 0.3s ease both;
   }
-
   .hero-name span { color: var(--red); }
 
   .hero-role {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.4rem, 4vw, 2.8rem);
-    letter-spacing: 0.3em;
-    color: var(--red);
-    margin-bottom: 2rem;
-    animation: fadeUp 1.2s 0.4s ease both;
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.4rem, 4vw, 2.8rem);
+    letter-spacing: 0.3em; color: var(--red); margin-bottom: 2rem; animation: fadeUp 1.2s 0.4s ease both;
   }
-
   .hero-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    color: var(--cream);
-    opacity: 0.8;
-    margin-bottom: 3rem;
-    animation: fadeUp 1.2s 0.5s ease both;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--cream); opacity: 0.8;
+    margin-bottom: 3rem; animation: fadeUp 1.2s 0.5s ease both;
   }
 
   .scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 0.4;
-    animation: fadeUp 1.2s 1s ease both;
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    opacity: 0.4; animation: fadeUp 1.2s 1s ease both;
   }
-
-  .scroll-hint span {
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--grey);
-  }
-
+  .scroll-hint span { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); }
   .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--grey), transparent);
+    width: 1px; height: 40px; background: linear-gradient(to bottom, var(--grey), transparent);
     animation: scrollDrop 2s ease-in-out infinite;
   }
-
   @keyframes scrollDrop {
     0% { transform: scaleY(0); transform-origin: top; }
     50% { transform: scaleY(1); transform-origin: top; }
@@ -177,441 +110,166 @@
 
   /* ── NAV ── */
   nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(8,8,8,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(204,17,17,0.2);
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    position: sticky; top: 0; z-index: 100; background: rgba(8,8,8,0.95);
+    backdrop-filter: blur(10px); border-bottom: 1px solid rgba(204,17,17,0.2);
+    padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
   }
-
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 0.1em;
-    color: var(--white);
-  }
-
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--white); }
   .nav-logo span { color: var(--red); }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    flex-wrap: wrap;
-  }
-
-  .nav-links a {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--grey);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; align-items: center; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--white); }
-  .nav-links a.vote-link { color: var(--red); font-weight: bold; }
+  
+  .lang-btn {
+    background: transparent; border: 1px solid var(--red); color: var(--red);
+    padding: 0.4rem 0.8rem; font-size: 0.7rem; letter-spacing: 0.1em;
+    cursor: pointer; border-radius: 4px; transition: all 0.3s ease;
+  }
+  .lang-btn:hover { background: var(--red); color: var(--white); }
 
-  /* ── HOME NAVIGATION CARDS (SUBPAGES) ── */
+  /* ── HOME NAVIGATION CARDS ── */
   .home-nav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
-    margin: 3rem auto 6rem;
-    padding: 0 2rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem; max-width: 1000px; margin: 3rem auto 6rem; padding: 0 2rem;
   }
-
   .home-nav-card {
-    background: var(--deep);
-    border: 1px solid rgba(204,17,17,0.2);
-    padding: 3rem 2rem;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-    overflow: hidden;
+    background: var(--deep); border: 1px solid rgba(204,17,17,0.2); padding: 2.5rem 1.5rem;
+    text-align: center; text-decoration: none; transition: all 0.3s ease;
+    display: flex; flex-direction: column; align-items: center; gap: 1rem; position: relative; overflow: hidden;
   }
-
   .home-nav-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: var(--red);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--red); transform: scaleX(0); transition: transform 0.3s ease;
   }
-
-  .home-nav-card:hover {
-    background: #161616;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(204,17,17,0.15);
-  }
-
+  .home-nav-card:hover { background: #161616; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(204,17,17,0.15); }
   .home-nav-card:hover::before { transform: scaleX(1); }
-
-  .home-nav-card .icon { font-size: 3rem; margin-bottom: 0.5rem; }
-  .home-nav-card h3 { color: var(--red); font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.1em; }
+  .home-nav-card .icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .home-nav-card h3 { color: var(--red); font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.1em; }
   .home-nav-card p { color: var(--grey); font-size: 0.85rem; line-height: 1.5; }
 
   /* ── BACK BUTTON ── */
-  .back-btn-container {
-    max-width: 900px;
-    margin: 3rem auto 0;
-    padding: 0 2rem;
-  }
-
+  .back-btn-container { max-width: 900px; margin: 3rem auto 0; padding: 0 2rem; }
   .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--red);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border: 1px solid rgba(204,17,17,0.3);
-    padding: 0.8rem 1.5rem;
-    transition: all 0.3s;
-    font-weight: 600;
+    display: inline-flex; align-items: center; gap: 0.5rem; color: var(--red);
+    text-decoration: none; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    border: 1px solid rgba(204,17,17,0.3); padding: 0.8rem 1.5rem; transition: all 0.3s; font-weight: 600;
   }
-
-  .back-btn:hover {
-    background: var(--red);
-    color: var(--white);
-  }
+  .back-btn:hover { background: var(--red); color: var(--white); }
 
   /* ── SECTIONS ── */
-  section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 3rem 2rem 5rem;
-  }
-
+  section { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem; }
   .section-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;
   }
-
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: rgba(204,17,17,0.3);
-  }
-
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(204,17,17,0.3); }
   .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    letter-spacing: 0.05em;
-    color: var(--white);
-    margin-bottom: 2rem;
-    line-height: 1;
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.05em; color: var(--white); margin-bottom: 2rem; line-height: 1;
   }
 
-  /* ── MANIFESTO ── */
-  .manifesto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5px;
-    margin-top: 3rem;
-    background: rgba(204,17,17,0.15);
-  }
-
-  .manifesto-card {
-    background: var(--deep);
-    padding: 2.5rem 2rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease;
-  }
-
+  /* ── CARDS & LISTS ── */
+  .manifesto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5px; margin-top: 3rem; background: rgba(204,17,17,0.15); }
+  .manifesto-card { background: var(--deep); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: background 0.3s ease; }
   .manifesto-card:hover { background: #161616; }
-
-  .manifesto-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--red);
-    transition: height 0.4s ease;
-  }
-
+  .manifesto-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--red); transition: height 0.4s ease; }
   .manifesto-card:hover::before { height: 100%; }
+  .card-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(204,17,17,0.15); line-height: 1; margin-bottom: 1rem; }
+  .card-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 0.8rem; }
+  .card-text { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.65); font-weight: 300; }
 
-  .card-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem;
-    color: rgba(204,17,17,0.15);
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-
-  .card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 0.8rem;
-  }
-
-  .card-text {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.65);
-    font-weight: 300;
-  }
-
-  /* ── RESOURCES ── */
   .resource-group { margin-bottom: 3rem; }
-
   .resource-group-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 0.1em;
-    color: var(--white);
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.1em;
+    color: var(--white); margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 0.8rem;
   }
-
-  .resource-group-title .icon { font-size: 1.2rem; }
-
-  .resource-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
+  .resource-links { display: flex; flex-direction: column; gap: 0.5rem; }
   .resource-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.9rem 1.2rem;
-    background: var(--deep);
-    text-decoration: none;
-    color: rgba(255,255,255,0.75);
-    font-size: 0.85rem;
-    font-weight: 300;
-    transition: all 0.25s ease;
-    border-left: 2px solid transparent;
-    gap: 1rem;
+    display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.2rem;
+    background: var(--deep); text-decoration: none; color: rgba(255,255,255,0.75);
+    font-size: 0.85rem; font-weight: 300; transition: all 0.25s ease; border-left: 2px solid transparent; gap: 1rem;
   }
-
-  .resource-link:hover {
-    border-left-color: var(--red);
-    background: #161616;
-    color: var(--white);
-    padding-left: 1.6rem;
-  }
-
-  .resource-link .arrow {
-    color: var(--red);
-    font-size: 0.7rem;
-    flex-shrink: 0;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-  }
-
+  .resource-link:hover { border-left-color: var(--red); background: #161616; color: var(--white); padding-left: 1.6rem; }
+  .resource-link .arrow { color: var(--red); font-size: 0.7rem; flex-shrink: 0; opacity: 0; transition: opacity 0.25s ease; }
   .resource-link:hover .arrow { opacity: 1; }
+  .resource-note { font-size: 0.75rem; color: var(--grey); font-style: italic; margin-top: 0.8rem; padding-left: 1.2rem; border-left: 1px solid rgba(255,255,255,0.1); }
 
-  .resource-note {
-    font-size: 0.75rem;
-    color: var(--grey);
-    font-style: italic;
-    margin-top: 0.8rem;
-    padding-left: 1.2rem;
-    border-left: 1px solid rgba(255,255,255,0.1);
+  /* ── INTERACTIVE HOPPER WIDGET ── */
+  .hopper-widget {
+    background: var(--deep); border: 1px solid rgba(204,17,17,0.3); padding: 1.5rem;
+    border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
   }
-
-  /* ── AI TIPS ── */
-  .ai-tips {
-    background: var(--deep);
-    border: 1px solid rgba(204,17,17,0.2);
-    padding: 2rem;
-    margin-top: 1rem;
+  .hopper-widget h3 { color: var(--red); font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; }
+  .hopper-controls { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hopper-controls select {
+    flex: 1; min-width: 200px; padding: 0.8rem; background: #1a1a1a; color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; font-family: 'Montserrat', sans-serif; outline: none;
   }
-
-  .ai-tips-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 1.2rem;
+  .hopper-controls select:focus { border-color: var(--red); }
+  .hopper-controls button {
+    padding: 0.8rem 1.5rem; background: var(--red); color: var(--white); border: none;
+    border-radius: 4px; cursor: pointer; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; transition: background 0.3s;
   }
-
-  .ai-tip {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 0.9rem;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.65);
-    font-weight: 300;
-    line-height: 1.6;
+  .hopper-controls button:hover { background: var(--red-bright); }
+  #hopper-results { margin-top: 1.5rem; }
+  .hopper-result-item {
+    padding: 1rem; background: #1a1a1a; border-left: 3px solid var(--red);
+    margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;
   }
+  .hopper-result-item span.route { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--white); }
+  .hopper-result-item span.time { color: var(--red); font-weight: 700; font-size: 1.1rem; }
 
-  .ai-tip .dot {
-    color: var(--red);
-    flex-shrink: 0;
-    margin-top: 0.15rem;
-  }
+  /* ── TABLES & AI TIPS ── */
+  .ai-tips { background: var(--deep); border: 1px solid rgba(204,17,17,0.2); padding: 2rem; margin-top: 1rem; }
+  .ai-tips-title { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 1.2rem; }
+  .ai-tip { display: flex; gap: 1rem; margin-bottom: 0.9rem; font-size: 0.85rem; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.6; }
+  .ai-tip .dot { color: var(--red); flex-shrink: 0; margin-top: 0.15rem; }
 
-  /* ── UMHD TABLE ── */
-  .umhd-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.82rem;
-    margin-top: 1rem;
-  }
-
-  .umhd-table th {
-    text-align: left;
-    padding: 0.7rem 1rem;
-    background: rgba(204,17,17,0.15);
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--red);
-    font-weight: 600;
-  }
-
-  .umhd-table td {
-    padding: 0.8rem 1rem;
-    color: rgba(255,255,255,0.65);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-weight: 300;
-    line-height: 1.5;
-    vertical-align: top;
-  }
-
+  .umhd-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 1rem; }
+  .umhd-table th { text-align: left; padding: 0.7rem 1rem; background: rgba(204,17,17,0.15); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-weight: 600; }
+  .umhd-table td { padding: 0.8rem 1rem; color: rgba(255,255,255,0.65); border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 300; line-height: 1.5; vertical-align: top; }
   .umhd-table tr:hover td { background: rgba(255,255,255,0.02); }
 
   /* ── VOTE SECTION ── */
-  .vote-section {
-    text-align: center;
-    padding: 6rem 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .vote-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(204,17,17,0.1) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
+  .vote-section { text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden; }
+  .vote-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(204,17,17,0.1) 0%, transparent 70%); pointer-events: none; }
   .vote-moon {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 120px; height: 120px; border-radius: 50%;
     background: radial-gradient(circle at 38% 38%, var(--moon) 0%, #E8C870 40%, #B8922A 80%, #7A5A10 100%);
     box-shadow: 0 0 40px rgba(247,232,192,0.2), inset -15px -10px 30px rgba(0,0,0,0.5);
-    margin: 0 auto 2.5rem;
-    animation: moonPulse 6s ease-in-out infinite;
+    margin: 0 auto 2.5rem; animation: moonPulse 6s ease-in-out infinite;
   }
-
-  .vote-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: var(--cream);
-    margin-bottom: 0.8rem;
-    line-height: 1.5;
+  .vote-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.2rem, 3vw, 1.8rem); color: var(--cream); margin-bottom: 0.8rem; line-height: 1.5; }
+  .vote-sub { font-size: 0.75rem; color: var(--grey); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 3rem; }
+  
+  /* ── FLOATING BUTTONS (VOTE & INSTAGRAM) ── */
+  .floating-container {
+    position: fixed; bottom: 2rem; right: 2rem;
+    display: flex; flex-direction: column; gap: 0.8rem; z-index: 1000; align-items: flex-end;
   }
-
-  .vote-sub {
-    font-size: 0.75rem;
-    color: var(--grey);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 3rem;
+  .floating-btn {
+    background: var(--red); color: var(--white);
+    padding: 0.8rem 1.2rem; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    box-shadow: 0 5px 15px rgba(204,17,17,0.3); transition: all 0.3s ease;
+    display: flex; align-items: center; gap: 0.5rem; border: 2px solid rgba(255,255,255,0.2);
   }
-
-  .vote-cta {
-    display: inline-block;
-    background: var(--red);
-    color: var(--white);
-    text-decoration: none;
-    padding: 1.1rem 3.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .vote-cta::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--red-bright);
-    transform: translateX(-101%);
-    transition: transform 0.3s ease;
-  }
-
-  .vote-cta:hover::before { transform: translateX(0); }
-  .vote-cta span { position: relative; z-index: 1; }
-
-  .vote-dates {
-    margin-top: 2rem;
-    font-size: 0.75rem;
-    color: var(--grey);
-    letter-spacing: 0.15em;
-  }
-
+  .floating-btn.ins-btn { background: var(--deep); border-color: rgba(255,255,255,0.1); color: var(--grey); font-size: 0.75rem; padding: 0.6rem 1rem; }
+  .floating-btn:hover { transform: translateY(-3px) scale(1.05); background: var(--red-bright); color: var(--white); border-color: var(--white); }
+  .floating-btn.ins-btn:hover { background: #161616; color: var(--white); border-color: var(--red); }
+  
   /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.7rem;
-    color: var(--grey);
-    letter-spacing: 0.15em;
-  }
-
+  footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem; text-align: center; font-size: 0.7rem; color: var(--grey); letter-spacing: 0.15em; }
   footer a { color: var(--red); text-decoration: none; }
-
-  /* ── DIVIDER ── */
-  .red-line {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(204,17,17,0.4), transparent);
-    margin: 0 auto;
-  }
+  .red-line { width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(204,17,17,0.4), transparent); margin: 0 auto; }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 600px) {
-    .nav-links { display: none; }
-    .manifesto-grid { grid-template-columns: 1fr; }
-    .umhd-table { font-size: 0.75rem; }
-    .umhd-table th, .umhd-table td { padding: 0.6rem 0.7rem; }
+  @media (max-width: 768px) {
+    .nav-links { justify-content: center; width: 100%; margin-top: 1rem; }
+    .floating-container { bottom: 1.5rem; right: 1.5rem; }
+    .floating-btn { padding: 0.7rem 1rem; font-size: 0.75rem; }
+    .hopper-controls { flex-direction: column; }
   }
 </style>
 </head>
@@ -621,11 +279,12 @@
 <nav>
   <div class="nav-logo"><span>Z</span>HIXING REN</div>
   <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#accessibility">Accessibility 🔑</a></li>
-    <li><a href="#resources">Resources 📁</a></li>
-    <li><a href="#umhd">Mental Health ☂️</a></li>
-    <li><a class="vote-link" href="https://su.nottingham.ac.uk/officer-elections" target="_blank">VOTE NOW</a></li>
+    <li><a href="#home"><span class="en">Home</span><span class="zh" style="display:none;">首页</span></a></li>
+    <li><a href="#accessibility"><span class="en">Accessibility 🔑</span><span class="zh" style="display:none;">无障碍政策 🔑</span></a></li>
+    <li><a href="#resources"><span class="en">Resources 📁</span><span class="zh" style="display:none;">学生资源 📁</span></a></li>
+    <li><a href="#umhd"><span class="en">Mental Health ☂️</span><span class="zh" style="display:none;">心理健康 ☂️</span></a></li>
+    <li><a href="#travel"><span class="en">Campus Life 🚌</span><span class="zh" style="display:none;">校园生活 🚌</span></a></li>
+    <li><button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">中文 / EN</button></li>
   </ul>
 </nav>
 
@@ -633,65 +292,74 @@
 <!-- PAGE 1: HOME PAGE -->
 <!-- ========================================= -->
 <div id="home" class="page">
-  <!-- HERO -->
   <div class="hero">
     <div class="moon"></div>
     
-    <!-- Profile Photo -->
-    <img src="your-photo.jpg" alt="Zhixing Ren" style="width:160px; height:160px; border-radius:50%; object-fit:cover; position:relative; z-index:2; margin-bottom:1rem; border: 2px solid var(--red); box-shadow: 0 0 20px rgba(204,17,17,0.3);">
+    <!-- Profile Photo with Instagram Link -->
+    <a href="https://instagram.com/zxr_uon" target="_blank" style="position:relative; z-index:2; margin-bottom:1rem; display:inline-block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="your-photo.jpg" alt="Zhixing Ren" style="width:160px; height:160px; border-radius:50%; object-fit:cover; border: 2px solid var(--red); box-shadow: 0 0 20px rgba(204,17,17,0.3);">
+    </a>
 
     <div class="hero-content">
-      <p class="tagline">may i be the moon</p>
+      <p class="tagline">
+        <span class="en">may i be the moon</span>
+        <span class="zh" style="display:none;">让我成为你的月亮</span>
+      </p>
       <h1 class="hero-name"><span>Z</span>HI<span>X</span>ING <span>R</span>EN</h1>
-      <p class="hero-role">VP Education 2026</p>
-      <p class="hero-quote">"Reflecting your voice. Lighting your way."</p>
+      <p class="hero-role">
+        <span class="en">VP Education 2026</span>
+        <span class="zh" style="display:none;">2026 教育副主席</span>
+      </p>
+      <p class="hero-quote">
+        <span class="en">"Reflecting your voice. Lighting your way."</span>
+        <span class="zh" style="display:none;">“反映你的心声，照亮你的前路。”</span>
+      </p>
     </div>
     
     <div class="scroll-hint">
-      <span>Explore Pages</span>
+      <span><span class="en">Explore Pages</span><span class="zh" style="display:none;">探索页面</span></span>
       <div class="scroll-line"></div>
     </div>
   </div>
 
-  <!-- SUBPAGES NAVIGATION MENU -->
   <div class="home-nav-grid">
-    <!-- Subpage 1 Link -->
     <a href="#accessibility" class="home-nav-card">
       <div class="icon">🔑</div>
-      <h3>Accessible Policies</h3>
-      <p>My manifesto and vision for clear, understandable rules.</p>
+      <h3><span class="en">Accessible Policies</span><span class="zh" style="display:none;">通俗易懂的政策</span></h3>
+      <p><span class="en">My manifesto and vision for clear, understandable rules.</span><span class="zh" style="display:none;">我的竞选宣言：推动清晰、易懂的校园规则。</span></p>
     </a>
-    
-    <!-- Subpage 2 Link -->
     <a href="#resources" class="home-nav-card">
       <div class="icon">📁</div>
-      <h3>All Resources</h3>
-      <p>The Student Support Hub. No more searching, just click.</p>
+      <h3><span class="en">All Resources</span><span class="zh" style="display:none;">学生资源库</span></h3>
+      <p><span class="en">The Student Support Hub. No more searching, just click.</span><span class="zh" style="display:none;">学生支持中心。无需繁琐搜索，一键直达。</span></p>
     </a>
-    
-    <!-- Subpage 3 Link -->
     <a href="#umhd" class="home-nav-card">
       <div class="icon">☂️</div>
-      <h3>Mental Health Day</h3>
-      <p>Stay under the umbrella. A guide to UMHD 2026 events.</p>
+      <h3><span class="en">Mental Health Day</span><span class="zh" style="display:none;">心理健康周</span></h3>
+      <p><span class="en">Stay under the umbrella. A guide to UMHD 2026 events.</span><span class="zh" style="display:none;">在保护伞下。UMHD 2026 校园活动指南。</span></p>
+    </a>
+    <a href="#travel" class="home-nav-card">
+      <div class="icon">🚌</div>
+      <h3><span class="en">Campus Life</span><span class="zh" style="display:none;">校园生活指北</span></h3>
+      <p><span class="en">Hopper Bus Live Check, Libraries, Gyms & Dorms.</span><span class="zh" style="display:none;">校车交互查询、图书馆、健身房、咖啡厅与宿舍申请。</span></p>
     </a>
   </div>
 
   <div class="red-line"></div>
 
-  <!-- VOTE SECTION -->
   <div class="vote-section">
     <div class="vote-moon"></div>
-    <p class="vote-quote">"Once you've stood in the heavy rain,<br>you want to share your umbrella<br>with the next person who needs it."</p>
-    <p class="vote-sub">Spring Elections 2026 — VP Education</p>
-    <a class="vote-cta" href="https://su.nottingham.ac.uk/officer-elections" target="_blank">
-      <span>Vote for Zhixing Ren</span>
-    </a>
+    <p class="vote-quote">
+      <span class="en">"Once you've stood in the heavy rain,<br>you want to share your umbrella<br>with the next person who needs it."</span>
+      <span class="zh" style="display:none;">“一旦你曾在暴雨中站立过，<br>你就会想把伞分享给<br>下一个需要它的人。”</span>
+    </p>
+    <p class="vote-sub"><span class="en">Spring Elections 2026 — VP Education</span><span class="zh" style="display:none;">2026 春季选举 — 教育副主席候选人</span></p>
     
-    <!-- Countdown Timer -->
     <p id="countdown-timer" style="margin-top: 1.5rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--red); letter-spacing: 0.1em;"></p>
-    
-    <p class="vote-dates">Voting open: Monday 9 March 10:00 — Friday 13 March 12:00</p>
+    <p class="vote-dates">
+      <span class="en">Voting open: Monday 9 March 10:00 — Friday 13 March 12:00</span>
+      <span class="zh" style="display:none;">投票时间: 3月9日 (周一) 10:00 — 3月13日 (周五) 12:00</span>
+    </p>
   </div>
 </div>
 
@@ -700,31 +368,41 @@
 <!-- ========================================= -->
 <div id="accessibility" class="page">
   <div class="back-btn-container">
-    <a href="#home" class="back-btn">← Back to Main Page</a>
+    <a href="#home" class="back-btn"><span class="en">← Back to Main Page</span><span class="zh" style="display:none;">← 返回主页</span></a>
   </div>
   
   <section>
-    <div class="section-label">Manifesto & Vision 🔑</div>
-    <h2 class="section-title">Three Priorities.<br>One Direction.</h2>
+    <div class="section-label"><span class="en">Manifesto & Vision 🔑</span><span class="zh" style="display:none;">竞选宣言与愿景 🔑</span></div>
+    <h2 class="section-title"><span class="en">Three Priorities.<br>One Direction.</span><span class="zh" style="display:none;">三大优先事项。<br>同一个方向。</span></h2>
     <p style="color:rgba(255,255,255,0.5); font-size:0.9rem; font-weight:300; line-height:1.8; max-width:600px;">
-      Education should work for every student — not just those who already know how to navigate the system.
+      <span class="en">Education should work for every student — not just those who already know how to navigate the system.</span>
+      <span class="zh" style="display:none;">教育应该为每一位学生服务——而不仅仅是那些已经懂得如何在这个系统中生存的人。</span>
     </p>
 
     <div class="manifesto-grid">
       <div class="manifesto-card">
         <div class="card-num">01</div>
-        <div class="card-title">Making Policy Accessible</div>
-        <p class="card-text">Policies like Extenuating Circumstances and AI Declaration exist to protect students — but only if they understand them. I will push for clearer communication, with particular attention to international and non-native English speaking students.</p>
+        <div class="card-title"><span class="en">Making Policy Accessible</span><span class="zh" style="display:none;">让政策通俗易懂</span></div>
+        <p class="card-text">
+          <span class="en">Policies like Extenuating Circumstances and AI Declaration exist to protect students — but only if they understand them. I will push for clearer communication, with particular attention to international and non-native English speaking students.</span>
+          <span class="zh" style="display:none;">特殊情况申请 (EC) 和 AI 声明等政策的初衷是为了保护学生——前提是大家能看懂。我将推动更清晰的政策沟通，特别关注国际学生和非英语母语学生的痛点。</span>
+        </p>
       </div>
       <div class="manifesto-card">
         <div class="card-num">02</div>
-        <div class="card-title">Bridging the AI Gap</div>
-        <p class="card-text">The University has pushed AI forward — but how to use it, where, and to what extent remains unclear. I've built my own approach and want to be a student-University bridge, so students can use AI confidently and responsibly.</p>
+        <div class="card-title"><span class="en">Bridging the AI Gap</span><span class="zh" style="display:none;">弥合 AI 使用差距</span></div>
+        <p class="card-text">
+          <span class="en">The University has pushed AI forward — but how to use it, where, and to what extent remains unclear. I've built my own approach and want to be a student-University bridge, so students can use AI confidently and responsibly.</span>
+          <span class="zh" style="display:none;">大学在积极推进 AI，但具体如何使用、在哪里用、界限在哪里，依然模糊不清。我想成为学生与大学之间的桥梁，让大家能自信且负责任地使用 AI。</span>
+        </p>
       </div>
       <div class="manifesto-card">
         <div class="card-num">03</div>
-        <div class="card-title">Supporting Students Who Struggle Quietly</div>
-        <p class="card-text">I took an interruption. For two years I was a student with special status at this University — and I found my way through. Once you've stood in the heavy rain, you want to share your umbrella with the next person who needs it.</p>
+        <div class="card-title"><span class="en">Supporting Students Who Struggle Quietly</span><span class="zh" style="display:none;">支持默默挣扎的学生</span></div>
+        <p class="card-text">
+          <span class="en">I took an interruption. For two years I was a student with special status at this University — and I found my way through. Once you've stood in the heavy rain, you want to share your umbrella with the next person who needs it.</span>
+          <span class="zh" style="display:none;">我曾办理过休学。在这所大学里，我有两年是以特殊身份就读的学生——最终我熬过来了。一旦你曾在暴雨中站立过，你就会想把伞分享给下一个需要它的人。</span>
+        </p>
       </div>
     </div>
   </section>
@@ -735,38 +413,56 @@
 <!-- ========================================= -->
 <div id="resources" class="page">
   <div class="back-btn-container">
-    <a href="#home" class="back-btn">← Back to Main Page</a>
+    <a href="#home" class="back-btn"><span class="en">← Back to Main Page</span><span class="zh" style="display:none;">← 返回主页</span></a>
   </div>
 
   <section>
-    <div class="section-label">Student Support Hub 📁</div>
-    <h2 class="section-title">No More Searching.<br>Just Click.</h2>
+    <div class="section-label"><span class="en">Student Support Hub 📁</span><span class="zh" style="display:none;">学生支持中心 📁</span></div>
+    <h2 class="section-title"><span class="en">No More Searching.<br>Just Click.</span><span class="zh" style="display:none;">无需繁琐搜索。<br>一键直达。</span></h2>
     <p style="color:rgba(255,255,255,0.5); font-size:0.9rem; font-weight:300; line-height:1.8; margin-bottom:3rem;">
-      Every link you need, right here. No jargon. No endless clicking through university pages.
+      <span class="en">Every link you need, right here. No jargon. No endless clicking through university pages.</span>
+      <span class="zh" style="display:none;">你所需要的每一个重要链接都在这里。没有难懂的术语，无需在大学网页中迷失。</span>
     </p>
+
+    <!-- Module Categories / Course Info -->
+    <div class="resource-group">
+      <div class="resource-group-title"><span class="icon">📖</span> <span class="en">Module & Course Info</span><span class="zh" style="display:none;">课程与模块目录</span></div>
+      <p class="resource-note" style="margin-bottom:0.8rem;">
+        <span class="en">Check module categories, credits, and academic curriculum details.</span>
+        <span class="zh" style="display:none;">查询模块分类、学分以及具体的课程大纲详情。</span>
+      </p>
+      <div class="resource-links">
+        <a class="resource-link" href="https://campus.nottingham.ac.uk/psc/csprd_pub/EMPLOYEE/HRMS/c/UN_PROG_AND_MOD_EXTRACT.UN_PLN_EXTRT_FL_CP.GBL?%C2%A0%C2%A0You&" target="_blank">
+          <span class="en">UoN Module Catalogue</span><span class="zh" style="display:none;">大学模块(课程)目录</span> <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
 
     <!-- EC -->
     <div class="resource-group">
       <div class="resource-group-title"><span class="icon">📋</span> Extenuating Circumstances (EC)</div>
-      <p class="resource-note" style="margin-bottom:0.8rem;">One central policy covers ALL faculties — Engineering, Arts, Science, Medicine, Social Sciences.</p>
+      <p class="resource-note" style="margin-bottom:0.8rem;">
+        <span class="en">One central policy covers ALL faculties.</span>
+        <span class="zh" style="display:none;">一项适用于所有学院的通用特殊情况申请政策。</span>
+      </p>
       <div class="resource-links">
         <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/services/extenuating-circumstances.aspx" target="_blank">
-          Main EC Page — Start Here <span class="arrow">↗</span>
+          <span class="en">Main EC Page — Start Here</span><span class="zh" style="display:none;">EC 主页 — 从这里开始</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/servicedetails/extenuating-circumstances/extenuating-circumstances-procedure.aspx" target="_blank">
-          EC Procedure — Steps, Timelines & Panels <span class="arrow">↗</span>
+          <span class="en">EC Procedure — Steps, Timelines & Panels</span><span class="zh" style="display:none;">EC 流程 — 步骤、时间线与评审小组</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://su.nottingham.ac.uk/advice/help-with-your-course/extenuating-circumstances" target="_blank">
-          SU Independent EC Advice (recommended) <span class="arrow">↗</span>
+          <span class="en">SU Independent EC Advice (recommended)</span><span class="zh" style="display:none;">SU 独立 EC 建议 (强烈推荐)</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://student-enquiries.nottingham.ac.uk/faqs/article/FAQs-2421/en-us" target="_blank">
-          What Counts as EC? <span class="arrow">↗</span>
+          <span class="en">What Counts as EC?</span><span class="zh" style="display:none;">什么情况符合 EC (特殊情况) 标准？</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://su.nottingham.ac.uk/advice/help-with-your-course/extenuating-circumstances/extenuating-circumstances-form" target="_blank">
-          Submit EC Form <span class="arrow">↗</span>
+          <span class="en">Submit EC Form</span><span class="zh" style="display:none;">提交 EC 申请表</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://www.nottingham.ac.uk/qualitymanual/assessment-awards-and-deg-classification/ext-circumstances.aspx" target="_blank">
-          Formal EC Regulation (Quality Manual) <span class="arrow">↗</span>
+          <span class="en">Formal EC Regulation (Quality Manual)</span><span class="zh" style="display:none;">正式 EC 规定 (质量手册)</span> <span class="arrow">↗</span>
         </a>
       </div>
     </div>
@@ -774,64 +470,62 @@
     <!-- AI -->
     <div class="resource-group">
       <div class="resource-group-title"><span class="icon">🤖</span> AI Guidelines</div>
-      <p class="resource-note" style="margin-bottom:0.8rem;">No single AI form exists — declarations are per assessment via your module handbook.</p>
+      <p class="resource-note" style="margin-bottom:0.8rem;">
+        <span class="en">No single AI form exists — declarations are per assessment.</span>
+        <span class="zh" style="display:none;">全校没有统一的 AI 声明表 — 请根据具体作业要求申报。</span>
+      </p>
       <div class="resource-links">
         <a class="resource-link" href="https://www.nottingham.ac.uk/studyingeffectively/ai/ai-assessment.aspx" target="_blank">
-          Using AI in Assessment — Start Here <span class="arrow">↗</span>
+          <span class="en">Using AI in Assessment — Start Here</span><span class="zh" style="display:none;">在评估作业中使用 AI — 从这里开始</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://www.nottingham.ac.uk/studyingeffectively/ai/ai-support.aspx" target="_blank">
-          Using AI to Support Your Studies <span class="arrow">↗</span>
+          <span class="en">Using AI to Support Your Studies</span><span class="zh" style="display:none;">使用 AI 辅助你的学习</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://www.nottingham.ac.uk/studyingeffectively/ai/ai.aspx" target="_blank">
-          AI at UoN — Overview <span class="arrow">↗</span>
+          <span class="en">AI at UoN — Overview</span><span class="zh" style="display:none;">诺丁汉大学 AI 概览</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://www.nottingham.ac.uk/qualitymanual/assessment-awards-and-deg-classification/pol-academic-misconduct.aspx" target="_blank">
-          Academic Integrity Policy (includes AI) <span class="arrow">↗</span>
+          <span class="en">Academic Integrity Policy (includes AI)</span><span class="zh" style="display:none;">学术诚信政策 (包含 AI)</span> <span class="arrow">↗</span>
         </a>
       </div>
       <div class="ai-tips">
-        <div class="ai-tips-title">🌙 How Zhixing Uses AI for Studying</div>
-        <div class="ai-tip"><span class="dot">▸</span><span><strong>Time management:</strong> Ask AI to break a large assignment into a week-by-week schedule.</span></div>
-        <div class="ai-tip"><span class="dot">▸</span><span><strong>Preview material:</strong> Paste a reading and ask for a plain-English summary before diving in.</span></div>
-        <div class="ai-tip"><span class="dot">▸</span><span><strong>Self-quiz:</strong> Ask AI to generate 10 practice questions from your lecture notes.</span></div>
-        <div class="ai-tip"><span class="dot">▸</span><span><strong>Mark-scheme check:</strong> Ask AI to evaluate your draft against published marking criteria.</span></div>
-        <div class="ai-tip"><span class="dot">▸</span><span><strong>Language support:</strong> Use AI for authentic translation of complex policy documents (declare where required).</span></div>
+        <div class="ai-tips-title">🌙 <span class="en">How Zhixing Uses AI for Studying</span><span class="zh" style="display:none;">Zhixing 学习中如何使用 AI</span></div>
+        <div class="ai-tip"><span class="dot">▸</span><span><span class="en"><strong>Time management:</strong> Ask AI to break a large assignment into a week-by-week schedule.</span><span class="zh" style="display:none;"><strong>时间管理：</strong>让 AI 把大作业拆解成每周的进度计划表。</span></span></div>
+        <div class="ai-tip"><span class="dot">▸</span><span><span class="en"><strong>Preview material:</strong> Paste a reading and ask for a plain-English summary before diving in.</span><span class="zh" style="display:none;"><strong>预览材料：</strong>在深度阅读前，让 AI 提取通俗易懂的摘要。</span></span></div>
       </div>
     </div>
 
     <!-- Disability & MH -->
     <div class="resource-group">
-      <div class="resource-group-title"><span class="icon">💙</span> Disability Support</div>
-      <p class="resource-note" style="margin-bottom:0.8rem;">You don't need a formal diagnosis to ask for help. Reach out early.</p>
+      <div class="resource-group-title"><span class="icon">💙</span> <span class="en">Disability & Mental Health Support</span><span class="zh" style="display:none;">残疾与健康支持</span></div>
+      <p class="resource-note" style="margin-bottom:0.8rem;">
+        <span class="en">You don't need a formal diagnosis to ask for help. Reach out early.</span>
+        <span class="zh" style="display:none;">您不需要正式的医疗诊断也可以寻求帮助。请尽早联系。</span>
+      </p>
       <div class="resource-links">
         <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/servicedetails/disability-support-services/disability-support-services.aspx" target="_blank">
-          Disability Support Services <span class="arrow">↗</span>
+          <span class="en">Disability Support Services</span><span class="zh" style="display:none;">残疾学生支持服务中心</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/servicedetails/disability-support-services/support-for-your-studies/reasonable-adjustments-and-support-plans.aspx" target="_blank">
-          Reasonable Adjustments & Support Plans <span class="arrow">↗</span>
+          <span class="en">Reasonable Adjustments & Support Plans</span><span class="zh" style="display:none;">合理调整方案与支持计划</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://www.nottingham.ac.uk/counselling/student-counselling/student-counselling.aspx" target="_blank">
-          Counselling Service <span class="arrow">↗</span>
+          <span class="en">Counselling Service</span><span class="zh" style="display:none;">学校心理咨询服务</span> <span class="arrow">↗</span>
+        </a>
+        <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/wellbeing/healthyu/mental-health/bodymind.aspx" target="_blank">
+          <span class="en">Mental Health & Wellbeing (HealthyU)</span><span class="zh" style="display:none;">心理健康与福祉 (HealthyU)</span> <span class="arrow">↗</span>
+        </a>
+        <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/wellbeing/emergency-support.aspx" target="_blank">
+          <span class="en">Emergency & Crisis Support</span><span class="zh" style="display:none;">紧急与危机支持</span> <span class="arrow">↗</span>
         </a>
         <a class="resource-link" href="https://su.nottingham.ac.uk/activities/view/disabled-students/" target="_blank">
-          Disabled Students' Network (SU) <span class="arrow">↗</span>
+          <span class="en">Disabled Students' Network (SU)</span><span class="zh" style="display:none;">残疾学生网络 (SU)</span> <span class="arrow">↗</span>
         </a>
-      </div>
-    </div>
-
-    <!-- Academic Misconduct -->
-    <div class="resource-group">
-      <div class="resource-group-title"><span class="icon">⚖️</span> Academic Misconduct</div>
-      <p class="resource-note" style="margin-bottom:0.8rem;">Don't panic. Don't face it alone. The SU advice team is independent from the University.</p>
-      <div class="resource-links">
-        <a class="resource-link" href="https://su.nottingham.ac.uk/advice/help-with-your-course/academic-misconduct" target="_blank">
-          SU Independent Advice — Start Here <span class="arrow">↗</span>
+        <a class="resource-link" href="https://www.nottinghamnightline.co.uk/" target="_blank">
+          <span class="en">Nottingham Nightline</span><span class="zh" style="display:none;">诺丁汉夜线 (Nightline)</span> <span class="arrow">↗</span>
         </a>
-        <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/servicedetails/appeals-complaints-and-conduct/academic-misconduct.aspx" target="_blank">
-          University Academic Misconduct Guidance <span class="arrow">↗</span>
-        </a>
-        <a class="resource-link" href="https://su.nottingham.ac.uk/advice/help-with-your-course/academic-appeals" target="_blank">
-          Academic Appeals — SU Advice <span class="arrow">↗</span>
+        <a class="resource-link" href="https://www.samaritans.org/how-we-can-help/contact-samaritan/" target="_blank">
+          <span class="en">Samaritans — Call 116 123 (free, 24/7)</span><span class="zh" style="display:none;">撒玛利亚会 — 免费心理热线 116 123</span> <span class="arrow">↗</span>
         </a>
       </div>
     </div>
@@ -843,146 +537,354 @@
 <!-- ========================================= -->
 <div id="umhd" class="page">
   <div class="back-btn-container">
-    <a href="#home" class="back-btn">← Back to Main Page</a>
+    <a href="#home" class="back-btn"><span class="en">← Back to Main Page</span><span class="zh" style="display:none;">← 返回主页</span></a>
   </div>
 
   <section>
-    <div class="section-label">Under the Umbrella ☂️</div>
-    <h2 class="section-title">University Mental<br>Health Week</h2>
+    <div class="section-label"><span class="en">Under the Umbrella ☂️</span><span class="zh" style="display:none;">在保护伞下 ☂️</span></div>
+    <h2 class="section-title"><span class="en">University Mental<br>Health Week</span><span class="zh" style="display:none;">大学心理健康周</span></h2>
     <p style="color:rgba(255,255,255,0.5); font-size:0.9rem; font-weight:300; line-height:1.8; margin-bottom:2rem;">
-      Theme: <strong style="color:var(--cream)">Human Connection</strong> — happening right during voting week (9–13 March 2026). Come along, take a break, talk to someone.
+      <span class="en">Theme: <strong style="color:var(--cream)">Human Connection</strong> — happening right during voting week (9–13 March 2026). Come along, take a break, talk to someone.</span>
+      <span class="zh" style="display:none;">主题：<strong style="color:var(--cream)">人际连接</strong> — 刚好在投票周期间 (2026年3月9-13日) 举办。过来放松一下，和大家聊聊天吧。</span>
     </p>
 
     <table class="umhd-table">
       <thead>
         <tr>
-          <th>Date & Time</th>
-          <th>Event</th>
-          <th>Location</th>
+          <th><span class="en">Date & Time</span><span class="zh" style="display:none;">日期与时间</span></th>
+          <th><span class="en">Event</span><span class="zh" style="display:none;">活动</span></th>
+          <th><span class="en">Location</span><span class="zh" style="display:none;">地点</span></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Mon/Wed/Thu 9am–4pm<br>Tue/Fri 9am–12pm</td>
-          <td>🥽 VR Calm Experience — drop in anytime</td>
+          <td>Mon/Wed/Thu 9am–4pm</td>
+          <td>🥽 <span class="en">VR Calm Experience</span><span class="zh" style="display:none;">VR 冥想体验</span></td>
           <td>ESLC A01</td>
         </tr>
         <tr>
           <td>Wed 11 Mar, 11:30–13:30</td>
-          <td>🐾 Therapy Dogs: Bertie & Ruby</td>
+          <td>🐾 <span class="en">Therapy Dogs: Bertie & Ruby</span><span class="zh" style="display:none;">治疗犬互动</span></td>
           <td>ESLC A01</td>
         </tr>
         <tr>
-          <td>Wed 11 Mar, 13:30–14:30</td>
-          <td>🚶 Wellbeing Walk — Highfields Lake</td>
-          <td>Lakeside Café</td>
-        </tr>
-        <tr>
           <td>Thu 12 Mar, 11:00–15:00</td>
-          <td>☕ Hot Chocolate & Marshmallows</td>
+          <td>☕ <span class="en">Hot Chocolate & Marshmallows</span><span class="zh" style="display:none;">热巧克力与棉花糖</span></td>
           <td>ESLC Atrium</td>
-        </tr>
-        <tr>
-          <td>Thu 12 Mar, 11:00–15:00</td>
-          <td>🎲 Biscuits & Board Games</td>
-          <td>ESLC Atrium</td>
-        </tr>
-        <tr>
-          <td>Thu 12 Mar, 11:00–15:00</td>
-          <td>🌱 Seed Planting & Pot Decorating</td>
-          <td>ESLC Atrium</td>
-        </tr>
-        <tr>
-          <td>Thu 12 Mar, 11:00–14:00</td>
-          <td>🍕 Wellbeing Café — free pizza & crafts</td>
-          <td>Portland Building B Floor</td>
         </tr>
       </tbody>
     </table>
-
-    <p style="margin-top:2rem;">
-      <a class="resource-link" href="https://www.nottingham.ac.uk/studentservices/wellbeing/healthyu/umhd.aspx" target="_blank" style="display:inline-flex; max-width:400px;">
-        View All UMHD 2026 Events → <span class="arrow" style="opacity:1;">↗</span>
-      </a>
-    </p>
   </section>
 </div>
 
 <!-- ========================================= -->
-<!-- GLOBAL FOOTER -->
+<!-- PAGE 5: TRAVEL & CAMPUS FACILITIES -->
+<!-- ========================================= -->
+<div id="travel" class="page">
+  <div class="back-btn-container">
+    <a href="#home" class="back-btn"><span class="en">← Back to Main Page</span><span class="zh" style="display:none;">← 返回主页</span></a>
+  </div>
+
+  <section>
+    <div class="section-label"><span class="en">Campus Life 🚌</span><span class="zh" style="display:none;">校园生活 🚌</span></div>
+    <h2 class="section-title"><span class="en">Getting Around &<br>Campus Facilities.</span><span class="zh" style="display:none;">玩转诺丁汉，<br>尽享校园设施。</span></h2>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.9rem; font-weight:300; line-height:1.8; margin-bottom:2rem;">
+      <span class="en">Important links for commuting (901-906), libraries, gyms, cafes, and dormitories.</span>
+      <span class="zh" style="display:none;">涵盖校区穿梭巴士 (901-906)、图书馆、健身房、咖啡厅与宿舍申请的实用指南。</span>
+    </p>
+
+    <!-- NEW: INTERACTIVE HOPPER BUS WIDGET (Smarter Logic added) -->
+    <div class="hopper-widget" id="hopper-app">
+      <h3>
+        <span class="en">Live Hopper Bus Predictor</span>
+        <span class="zh" style="display:none;">校车预计到达查询</span>
+      </h3>
+      
+      <!-- Under Development Warning Added Here -->
+      <p style="font-size: 0.85rem; color: var(--red); margin-bottom: 0.5rem; font-weight: bold; display: flex; align-items: center; gap: 0.4rem;">
+        <span>⚠️</span>
+        <span class="en">Note: This function is currently under development.</span>
+        <span class="zh" style="display:none;">注意：此功能目前正在开发中 (Under Development)。</span>
+      </p>
+
+      <p style="font-size: 0.8rem; color: var(--grey); margin-bottom: 1rem;">
+        <span class="en">Select your stop to check expected arrival times for routes 901, 903, 904, 906 (Algorithm accurately considers first bus starting times & term dates).</span>
+        <span class="zh" style="display:none;">选择您的站点，查询 901, 903, 904, 906 的预估到达时间 (算法已准确考虑首/末班车发车时间与学期差异)。</span>
+      </p>
+      
+      <div class="hopper-controls">
+        <select id="hopper-stop-select">
+          <option value=""><span class="en">-- Select a Stop / 选择站点 --</span></option>
+          <!-- Options populated by JS below to ensure Ascending A-Z -->
+        </select>
+        <button onclick="checkNextBus()">
+          <span class="en">Check Next Bus</span><span class="zh" style="display:none;">查询下班车</span>
+        </button>
+      </div>
+      
+      <div id="hopper-results">
+        <!-- Results appear here -->
+      </div>
+    </div>
+
+    <!-- Library & Study Spaces -->
+    <div class="resource-group" style="margin-top: 3rem;">
+      <div class="resource-group-title"><span class="icon">📚</span> <span class="en">Libraries & Study Spaces</span><span class="zh" style="display:none;">图书馆与学习空间</span></div>
+      <div class="resource-links">
+        <a class="resource-link" href="https://www.nottingham.ac.uk/library/" target="_blank">
+          <span class="en">UoN Libraries Home</span><span class="zh" style="display:none;">大学图书馆主页</span> <span class="arrow">↗</span>
+        </a>
+        <a class="resource-link" href="https://www.nottingham.ac.uk/library/studying/study-spaces/index.aspx" target="_blank">
+          <span class="en">Book a Study Space</span><span class="zh" style="display:none;">预订学习空间</span> <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Gyms & Cafes -->
+    <div class="resource-group">
+      <div class="resource-group-title"><span class="icon">☕</span> <span class="en">Gyms & Cafes</span><span class="zh" style="display:none;">健身房与咖啡厅</span></div>
+      <div class="resource-links">
+        <a class="resource-link" href="https://www.nottingham.ac.uk/sport/" target="_blank">
+          <span class="en">UoN Sport & Gym Memberships</span><span class="zh" style="display:none;">大学体育馆与健身房会员</span> <span class="arrow">↗</span>
+        </a>
+        <a class="resource-link" href="https://www.nottingham.ac.uk/hospitality/cafes-and-bars/cafes-and-bars.aspx" target="_blank">
+          <span class="en">Campus Cafes & Bars Directory</span><span class="zh" style="display:none;">校内咖啡厅与酒吧指南</span> <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Accommodation -->
+    <div class="resource-group">
+      <div class="resource-group-title"><span class="icon">🛏️</span> <span class="en">Dormitory & Accommodation</span><span class="zh" style="display:none;">大学宿舍与住宿安排</span></div>
+      <div class="resource-links">
+        <a class="resource-link" href="https://www.nottingham.ac.uk/accommodation/" target="_blank">
+          <span class="en">UoN Accommodation Portal</span><span class="zh" style="display:none;">大学官方住宿申请入口</span> <span class="arrow">↗</span>
+        </a>
+        <a class="resource-link" href="https://su.nottingham.ac.uk/advice/housing-advice" target="_blank">
+          <span class="en">SU Housing Advice (Independent)</span><span class="zh" style="display:none;">学生会(SU) 独立租房建议</span> <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========================================= -->
+<!-- GLOBAL FOOTER & FLOATING BUTTONS -->
 <!-- ========================================= -->
 <footer>
-  <p>Zhixing Ren — VP Education Candidate, Spring Elections 2026</p>
+  <p><span class="en">Zhixing Ren — VP Education Candidate, Spring Elections 2026</span><span class="zh" style="display:none;">Zhixing Ren — 2026 教育副主席候选人</span></p>
   <p style="margin-top:0.5rem;">
     <a href="https://su.nottingham.ac.uk/officer-elections" target="_blank">su.nottingham.ac.uk</a>
     &nbsp;·&nbsp; 🌙 Be the moon.
   </p>
-  
-  <!-- Contact & Social Media -->
   <p style="margin-top:1rem; font-size: 0.8rem;">
     <a href="https://instagram.com/zxr_uon" target="_blank">Instagram (@zxr_uon)</a> &nbsp;|&nbsp; 
     <a href="mailto:eeyzr1@nottingham.ac.uk">Email Me</a>
   </p>
-  
-  <!-- AI Acknowledgments -->
   <p style="margin-top:1.5rem; font-size: 0.7rem; color: rgba(136,136,136,0.6);">
     Special thanks to the contribution of Claude, DeepSeek, and Gemini for assisting with this campaign website.
   </p>
 </footer>
 
+<!-- FLOATING BUTTONS (VOTE & INSTAGRAM) -->
+<div class="floating-container">
+  <a href="https://instagram.com/zxr_uon" target="_blank" class="floating-btn ins-btn">
+    <span class="icon">📱</span> 
+    <span class="en">@ZXR_UON</span><span class="zh" style="display:none;">关注 INS</span>
+  </a>
+  <a href="https://su.nottingham.ac.uk/officer-elections" target="_blank" class="floating-btn">
+    <span class="icon">🗳️</span> 
+    <span class="en">VOTE ZHIXING</span><span class="zh" style="display:none;">投 Zhixing 一票</span>
+  </a>
+</div>
+
 <!-- ========================================= -->
 <!-- SCRIPTS -->
 <!-- ========================================= -->
 <script>
-  /* ── 1. SPA HASH ROUTING (Subpage Navigation) ── */
-  function handleRouting() {
-    // Get the hash from the URL (e.g., #resources), default to #home
-    let hash = window.location.hash || '#home';
-    
-    // Hide all pages by removing the 'active' class
-    document.querySelectorAll('.page').forEach(page => {
-      page.classList.remove('active');
+  /* ── 0. BILINGUAL TOGGLE ── */
+  let isChinese = false;
+  function toggleLanguage() {
+    isChinese = !isChinese;
+    document.querySelectorAll('.en').forEach(el => el.style.display = isChinese ? 'none' : '');
+    document.querySelectorAll('.zh').forEach(el => {
+      el.style.display = isChinese ? 'inline-block' : 'none'; 
+      if(el.tagName === 'DIV' || el.tagName === 'P' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'OPTION') {
+         el.style.display = isChinese ? 'block' : 'none';
+      }
     });
-    
-    // Try to find the page matching the hash
-    const targetPage = document.querySelector(hash);
-    
-    if (targetPage) {
-      targetPage.classList.add('active'); // Show target page
-      window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
-    } else {
-      document.getElementById('home').classList.add('active'); // Fallback to home
-    }
+    document.getElementById('lang-toggle').innerText = isChinese ? 'EN / 中文' : '中文 / EN';
+    populateHopperDropdown(); // Re-populate dropdown to change language
   }
 
-  // Listen for navigation clicks (Hash Changes)
+  /* ── 1. SPA HASH ROUTING ── */
+  function handleRouting() {
+    let hash = window.location.hash || '#home';
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    const targetPage = document.querySelector(hash);
+    if (targetPage) {
+      targetPage.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      document.getElementById('home').classList.add('active');
+    }
+  }
   window.addEventListener('hashchange', handleRouting);
-  // Run on first load
   window.addEventListener('load', handleRouting);
 
   /* ── 2. COUNTDOWN TIMER ── */
   const voteStartDate = new Date('March 9, 2026 10:00:00').getTime();
-  
-  const timerInterval = setInterval(() => {
+  setInterval(() => {
     const timerElement = document.getElementById('countdown-timer');
-    if (!timerElement) return; // Prevent error if timer is missing
-
+    if (!timerElement) return;
     const now = new Date().getTime();
     const distance = voteStartDate - now;
-    
     if (distance > 0) {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      timerElement.innerHTML = `VOTING OPENS IN: ${days} DAYS ${hours} HOURS`;
+      timerElement.innerHTML = isChinese ? `距离投票开始：${days} 天 ${hours} 小时` : `VOTING OPENS IN: ${days} DAYS ${hours} HOURS`;
     } else {
-      timerElement.innerHTML = "VOTING IS NOW OPEN!";
-      timerElement.style.color = "var(--white)";
-      timerElement.style.background = "var(--red)";
-      timerElement.style.display = "inline-block";
-      timerElement.style.padding = "0.5rem 1rem";
-      clearInterval(timerInterval);
+      timerElement.innerHTML = isChinese ? "投票通道已开启！" : "VOTING IS NOW OPEN!";
+      timerElement.style.color = "var(--white)"; timerElement.style.background = "var(--red)";
+      timerElement.style.display = "inline-block"; timerElement.style.padding = "0.5rem 1rem";
     }
   }, 1000);
+
+  /* ── 3. HOPPER BUS INTERACTIVE WIDGET (With First/Last Bus Logic) ── */
+  const hopperData = {
+    stops: [
+      { id: 'beeston', en: 'Beeston', zh: 'Beeston (比斯顿)' },
+      { id: 'clifton', en: 'Clifton South P&R', zh: 'Clifton P&R (克利夫顿)' },
+      { id: 'derby', en: 'Derby Road / Savoy', zh: 'Derby Road (德比路)' },
+      { id: 'jubilee', en: 'Jubilee Campus', zh: 'Jubilee Campus (朱比利校区)' },
+      { id: 'kegworth', en: 'Kegworth', zh: 'Kegworth (凯格沃思)' },
+      { id: 'qmc', en: 'QMC Main Entrance', zh: 'QMC (女王医疗中心)' },
+      { id: 'rdh', en: 'Royal Derby Hospital', zh: 'Royal Derby Hospital (皇家德比医院)' },
+      { id: 'sb', en: 'Sutton Bonington Campus', zh: 'Sutton Bonington (SB校区)' },
+      { id: 'up', en: 'University Park Campus', zh: 'University Park (主校区)' }
+    ],
+    routes: {
+      // Logic: first & last represented in minutes from midnight (e.g. 23:00 = 23 * 60 = 1380)
+      '901': { stops: ['up', 'clifton', 'sb', 'kegworth'], first: 7*60+20, last: 24*60, freq: 30, wEndFreq: 90 }, 
+      '903': { stops: ['jubilee', 'up', 'derby'], first: 8*60, last: 23*60, freq: 15, nonTermFreq: 30, nonTermLast: 18*60, satFreq: 30, satLast: 19*60, noSun: true }, 
+      '904': { stops: ['derby', 'qmc', 'up', 'rdh'], first: 6*60+35, last: 22*60+20, freq: 60, noWeekend: true },
+      '906': { stops: ['up', 'jubilee', 'beeston'], first: 19*60+30, last: 23*60+30, freq: 60, noSun: true }
+    }
+  };
+
+  function populateHopperDropdown() {
+    const select = document.getElementById('hopper-stop-select');
+    if(!select) return;
+    const currentVal = select.value;
+    
+    // Sort A-Z based on current language
+    const sortedStops = [...hopperData.stops].sort((a, b) => {
+      return isChinese ? a.zh.localeCompare(b.zh) : a.en.localeCompare(b.en);
+    });
+
+    select.innerHTML = `<option value="">-- ${isChinese ? '选择站点' : 'Select a Stop'} --</option>`;
+    sortedStops.forEach(stop => {
+      select.innerHTML += `<option value="${stop.id}">${isChinese ? stop.zh : stop.en}</option>`;
+    });
+    select.value = currentVal; 
+  }
+
+  function checkNextBus() {
+    const stopId = document.getElementById('hopper-stop-select').value;
+    const resultsDiv = document.getElementById('hopper-results');
+    
+    if (!stopId) {
+      resultsDiv.innerHTML = `<p style="color:var(--red);">${isChinese ? '请先在下拉菜单中选择一个站点。' : 'Please select a stop from the list first.'}</p>`;
+      return;
+    }
+
+    const now = new Date();
+    const currentMins = now.getHours() * 60 + now.getMinutes();
+    const dayOfWeek = now.getDay(); // 0 = Sunday, 1-5 = Weekday, 6 = Saturday
+    const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+    
+    // Rough Term Time Calculation (Spring 2026: Jan 12 - Mar 20, Summer: Apr 20 - Jun 19)
+    const month = now.getMonth(); 
+    const date = now.getDate();
+    let isTerm = false;
+    if ((month === 0 && date >= 12) || month === 1 || (month === 2 && date <= 20)) isTerm = true; 
+    if ((month === 3 && date >= 20) || month === 4 || (month === 5 && date <= 19)) isTerm = true; 
+
+    let outputHtml = '';
+    
+    Object.keys(hopperData.routes).forEach(routeId => {
+      const route = hopperData.routes[routeId];
+      if (route.stops.includes(stopId)) {
+        
+        // Exclude days where it does not run
+        if (dayOfWeek === 0 && route.noSun) return; 
+        if (isWeekend && route.noWeekend) return; 
+        
+        let activeFreq = route.freq;
+        let activeLast = route.last;
+        let activeFirst = route.first;
+
+        // Apply dynamic frequency and last-bus timings based on term/weekend
+        if (dayOfWeek === 6 && route.satFreq) activeFreq = route.satFreq;
+        if (isWeekend && route.wEndFreq) activeFreq = route.wEndFreq;
+        if (!isTerm && !isWeekend && route.nonTermFreq) activeFreq = route.nonTermFreq;
+
+        if (dayOfWeek === 6 && route.satLast) activeLast = route.satLast;
+        if (!isTerm && !isWeekend && route.nonTermLast) activeLast = route.nonTermLast;
+
+        let timeContext = "";
+        let nextBusMins = -1;
+        
+        // Smart Timing Logic: Before First Bus, Running, or Ended
+        if (currentMins < activeFirst) {
+          nextBusMins = activeFirst - currentMins;
+          timeContext = "before_start";
+        } else if (currentMins <= activeLast) {
+          const minsSinceStart = currentMins - activeFirst;
+          nextBusMins = activeFreq - (minsSinceStart % activeFreq);
+          timeContext = "running";
+        } else {
+          timeContext = "ended";
+        }
+
+        // Render Results
+        if (timeContext === "running" || timeContext === "before_start") {
+          let expectedTimeStr = `${nextBusMins} ${isChinese ? '分钟后' : 'mins'}`;
+          
+          if(nextBusMins === 0) expectedTimeStr = isChinese ? '即将到达 (Due)' : 'Due Now';
+          
+          if(timeContext === "before_start") {
+              const startH = Math.floor(activeFirst / 60).toString().padStart(2, '0');
+              const startM = (activeFirst % 60).toString().padStart(2, '0');
+              expectedTimeStr = isChinese ? `首班车 ${startH}:${startM} (${nextBusMins}分钟后)` : `Starts ${startH}:${startM} (in ${nextBusMins}m)`;
+          }
+          
+          outputHtml += `
+            <div class="hopper-result-item">
+              <span class="route">ROUTE ${routeId}</span>
+              <span class="time">${expectedTimeStr}</span>
+            </div>
+          `;
+        } else {
+          outputHtml += `
+            <div class="hopper-result-item">
+              <span class="route">ROUTE ${routeId}</span>
+              <span class="time" style="color:var(--grey); font-size:0.9rem;">${isChinese ? '今日已结束运营' : 'Finished for today'}</span>
+            </div>
+          `;
+        }
+      }
+    });
+
+    if (outputHtml === '') {
+      outputHtml = `<p style="color:var(--grey);">${isChinese ? '没有校车线路经过此站点。' : 'No routes serve this stop at this time.'}</p>`;
+    }
+    
+    resultsDiv.innerHTML = outputHtml;
+  }
+
+  // Initialize dropdown on load
+  window.addEventListener('load', populateHopperDropdown);
 </script>
 
 </body>
