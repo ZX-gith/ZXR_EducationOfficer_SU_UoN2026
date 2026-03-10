@@ -25,7 +25,7 @@
     color: var(--white);
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
-    line-height: 1.8;
+    line-height: 1.85; /* Optimized for dyslexia-friendly reading */
     letter-spacing: 0.03em;
   }
 
@@ -61,22 +61,33 @@
   }
   .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--white); text-decoration: none; }
   .nav-logo span { color: var(--red); }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+  .nav-links { display: flex; gap: 1rem; list-style: none; align-items: center; }
   .nav-links a { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover, .nav-links a.active { color: var(--red); }
   
+  /* HIGH VISIBILITY LANG TOGGLE */
   .lang-toggle-btn {
-    background: transparent; border: 1px solid var(--red); color: var(--red);
-    padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;
-    cursor: pointer; transition: 0.3s;
+    background: var(--red); 
+    border: 1px solid var(--white); 
+    color: var(--white);
+    padding: 0.4rem 1rem; 
+    border-radius: 20px; 
+    font-size: 0.75rem; 
+    font-weight: 800;
+    cursor: pointer; 
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(204,17,17,0.4);
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
-  .lang-toggle-btn:hover { background: var(--red); color: white; }
+  .lang-toggle-btn:hover { background: var(--red-bright); transform: scale(1.05); }
 
   .nav-vote-btn { 
-    background: var(--red); color: white !important; padding: 0.5rem 1rem; 
-    border-radius: 4px; transition: transform 0.3s;
+    background: var(--white); color: var(--red) !important; padding: 0.5rem 1rem; 
+    border-radius: 4px; transition: transform 0.3s; font-weight: 800 !important;
   }
-  .nav-vote-btn:hover { transform: scale(1.05); background: var(--red-bright); }
+  .nav-vote-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
 
   /* ── HERO ── */
   .hero {
@@ -154,8 +165,13 @@
     <li><a href="#home"><span class="en">Home</span><span class="zh">主页</span></a></li>
     <li><a href="#manifesto"><span class="en">Manifesto</span><span class="zh">竞选宣言</span></a></li>
     <li><a href="#resources"><span class="en">Resources</span><span class="zh">学生资源</span></a></li>
-    <li><button class="lang-toggle-btn" onclick="toggleLanguage()">EN / 中文</button></li>
-    <li><a href="https://su.nottingham.ac.uk/elections/vote/7374" target="_blank" class="nav-vote-btn"><span class="en">Vote Now 🗳️</span><span class="zh">立即投票 🗳️</span></a></li>
+    <li>
+      <button class="lang-toggle-btn" onclick="toggleLanguage()">
+        <span class="en">中文版</span>
+        <span class="zh">ENGLISH</span>
+      </button>
+    </li>
+    <li><a href="https://su.nottingham.ac.uk/elections/vote/7374" target="_blank" class="nav-vote-btn"><span class="en">VOTE 🗳️</span><span class="zh">投票 🗳️</span></a></li>
   </ul>
 </nav>
 
@@ -226,28 +242,34 @@
         <span class="en">Accessible. Supported. Heard.</span>
         <span class="zh">为华生发声，照亮前行之路</span>
     </h2>
-    <p style="margin-bottom: 2rem;">
-        <span class="en">Education should work for every student — not just those who know how to navigate the system.</span>
-        <span class="zh">教育应该为每一位学生服务——而不仅仅是那些深谙系统规则的人。</span>
-    </p>
     
     <div style="background:var(--deep); padding:2rem; border-radius:8px; margin-bottom:2rem; border-left: 2px solid var(--red);">
       <h4 style="color:var(--red); margin-bottom:1rem; font-family: 'Montserrat', sans-serif;">
-          <span class="en">Making Policy Accessible</span><span class="zh">让政策通俗易懂</span>
+          <span class="en">1. Making Policy Accessible</span><span class="zh">1. 让政策通俗易懂</span>
       </h4>
       <p style="font-size:0.95rem; color:var(--grey);">
-          <span class="en">I will push for clearer communication on Extenuating Circumstances and AI policies, focusing on international students who are often disadvantaged by complex language.</span>
+          <span class="en">I will push for clearer communication on Extenuating Circumstances (EC) and AI policies, focusing on international students who are often disadvantaged by complex language.</span>
           <span class="zh">我将推动有关特殊情况申请 (EC) 和 AI 政策的更清晰沟通，重点关注因复杂的学术语言而处于劣势的国际学生。</span>
       </p>
     </div>
 
     <div style="background:var(--deep); padding:2rem; border-radius:8px; margin-bottom:2rem; border-left: 2px solid var(--red);">
       <h4 style="color:var(--red); margin-bottom:1rem; font-family: 'Montserrat', sans-serif;">
-          <span class="en">Bridging the AI Gap</span><span class="zh">弥合 AI 使用差距</span>
+          <span class="en">2. Bridging the AI Gap</span><span class="zh">2. 弥合 AI 使用差距</span>
       </h4>
       <p style="font-size:0.95rem; color:var(--grey);">
-          <span class="en">Using AI responsibly to manage time and preview materials. I want to be a student-University bridge, sharing what works.</span>
-          <span class="zh">负责任地利用 AI 进行时间管理和材料预览。我想成为学生与大学之间的桥梁，分享有效的学习方案。</span>
+          <span class="en">Using AI responsibly to manage time and preview materials. I want to be a student-University bridge, sharing what works for self-quizzing and previewing.</span>
+          <span class="zh">负责任地利用 AI 进行时间管理和材料预览。我想成为学生与大学之间的桥梁，分享有效的自测与预习方案。</span>
+      </p>
+    </div>
+
+    <div style="background:var(--deep); padding:2rem; border-radius:8px; margin-bottom:2rem; border-left: 2px solid var(--red);">
+      <h4 style="color:var(--red); margin-bottom:1rem; font-family: 'Montserrat', sans-serif;">
+          <span class="en">3. Supporting Students Who Struggle Quietly</span><span class="zh">3. 支持默默挣扎的学生</span>
+      </h4>
+      <p style="font-size:0.95rem; color:var(--grey);">
+          <span class="en">I took an interruption. For two years I was a student with special status — and I found my way through. Once you've stood in the heavy rain, you want to share your umbrella with the next person who needs it.</span>
+          <span class="zh">我曾办理过休学。在这所大学里，我有两年是以特殊身份就读的学生——最终我熬过来了。一旦你曾在暴雨中站立过，你就会想把伞分享给下一个需要它的人。</span>
       </p>
     </div>
 
@@ -267,14 +289,16 @@
     
     <div class="security-alert">
       <strong>🛡️ <span class="en">Cybersecurity & Information Integrity</span><span class="zh">网络安全与信息完整性</span></strong>
-      <span class="en">All external links provided here have been manually gathered and verified by Zhixing. They lead directly to official University of Nottingham or Student Union web pages. For your safety, always check the URL before entering any personal data and avoid suspicious links.</span>
-      <span class="zh">此处提供的所有外部链接均由 Zhixing 亲自收集并核实，直接指向诺丁汉大学官方页面或学生会网站。为了您的安全，请在输入个人数据前检查 URL，切勿点击任何可疑链接。</span>
+      <span class="en">Information gathered by Zhixing: All links below lead directly to official University of Nottingham or Student Union web pages. For your safety, always verify URLs and do not enter sensitive data into unofficial or dangerous web links.</span>
+      <span class="zh">由 Zhixing 整理的信息：以下所有链接均直达诺丁汉大学官方或学生会网页。为了您的安全，请务必核实 URL，切勿在非官方或危险的链接中输入个人敏感信息。</span>
     </div>
 
     <p style="margin-bottom: 1.5rem;"><span class="en">Direct access to official University services:</span><span class="zh">直达大学官方服务：</span></p>
     <ul style="list-style:none; display:grid; gap:1.2rem;">
       <li><a href="https://www.nottingham.ac.uk/studentservices/services/extenuating-circumstances.aspx" target="_blank" style="color:var(--white); text-decoration:none; display:block; background:var(--deep); padding:1.2rem; border-left:3px solid var(--red); font-size: 0.95rem;">→ <span class="en">Official EC Policy & Guidance</span><span class="zh">官方 EC 政策与指南</span> ↗</a></li>
       <li><a href="https://www.nottingham.ac.uk/studyingeffectively/ai/ai-assessment.aspx" target="_blank" style="color:var(--white); text-decoration:none; display:block; background:var(--deep); padding:1.2rem; border-left:3px solid var(--red); font-size: 0.95rem;">→ <span class="en">AI Academic Integrity Guidelines</span><span class="zh">AI 学术诚信准则</span> ↗</a></li>
+      <li><a href="https://www.nottingham.ac.uk/studentservices/services/libraries.aspx" target="_blank" style="color:var(--white); text-decoration:none; display:block; background:var(--deep); padding:1.2rem; border-left:3px solid var(--red); font-size: 0.95rem;">→ <span class="en">Library Services & Study Spaces</span><span class="zh">图书馆服务与学习空间</span> ↗</a></li>
+      <li><a href="https://www.nottingham.ac.uk/student-living/accommodation/index.aspx" target="_blank" style="color:var(--white); text-decoration:none; display:block; background:var(--deep); padding:1.2rem; border-left:3px solid var(--red); font-size: 0.95rem;">→ <span class="en">Accommodation Portal</span><span class="zh">学生住宿申请入口</span> ↗</a></li>
       <li><a href="https://www.nottingham.ac.uk/counselling/" target="_blank" style="color:var(--white); text-decoration:none; display:block; background:var(--deep); padding:1.2rem; border-left:3px solid var(--red); font-size: 0.95rem;">→ <span class="en">University Mental Health Support</span><span class="zh">大学心理健康支持</span> ↗</a></li>
     </ul>
 
@@ -290,13 +314,10 @@
 </footer>
 
 <script>
-  // Language Toggle Logic
   function toggleLanguage() {
     document.body.classList.toggle('zh-mode');
-    // Save preference to localStorage if desired
   }
 
-  // Routing
   function handleRoute() {
     const hash = window.location.hash || '#home';
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -309,7 +330,6 @@
     window.scrollTo(0, 0);
   }
 
-  // Live Clock
   function updateTime() {
     const now = new Date();
     const timeString = now.toLocaleTimeString('en-GB', { hour12: false });
